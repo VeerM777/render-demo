@@ -1,4 +1,4 @@
-﻿absl-py==2.1.0
+absl-py==2.1.0
 annotated-types==0.7.0
 anyio==4.8.0
 asttokens==3.0.0
@@ -67,9 +67,11 @@ stack-data==0.6.3
 starlette==0.45.3
 tensorboard==2.18.0
 tensorboard-data-server==0.7.2
-tensorflow==2.18.0
 tensorflow-io-gcs-filesystem==0.31.0
-tensorflow_intel==2.18.0
+# Install TensorFlow only on Python versions below 3.11
+tensorflow==2.18.0; python_version < "3.11"
+# Install the Intel-optimized TensorFlow package only on Windows with Python versions below 3.11
+tensorflow_intel==2.18.0; sys_platform == "win32" and python_version < "3.11"
 termcolor==2.5.0
 threadpoolctl==3.6.0
 tornado==6.4.2
