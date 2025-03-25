@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Placement Predictor</title>
+</head>
+<body>
+
+<h1>Student Placement Predictor</h1>
+
+<form action="/predict" method="post">
+    <label for="cgpa">CGPA:</label><br>
+    <input type="text" id="cgpa" name="cgpa" required><br><br>
+
+    <label for="iq">IQ:</label><br>
+    <input type="text" id="iq" name="iq" required><br><br>
+
+    <label for="profile_score">Profile Score:</label><br>
+    <input type="text" id="profile_score" name="profile_score" required><br><br>
+
+    <input type="submit" value="Predict">
+</form>
+
+<!-- Display the prediction result here -->
+{% if prediction %}
+    <h2>Prediction: {{ prediction }}</h2>
+{% endif %}
+
+</body>
+</html>
